@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <string.h>
+
+// Função para realizar a ordenação Bubble Sort
+void bubbleSort(char arr[], int n) {
+    int i, j;
+    char temp;
+    for (i = 0; i < n-1; i++) {
+        for (j = 0; j < n-i-1; j++) {
+            if (arr[j] > arr[j+1]) {
+                // Troca de arr[j] e arr[j+1]
+                temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
+}
+
+int main() {
+    char input[100];
+    
+    // Solicita ao usuário que insira várias letras
+    printf("Digite várias letras (sem espaços, apenas letras): ");
+    scanf("%s", input);
+    
+    // Calcula o comprimento da string
+    int n = strlen(input);
+    
+    // Ordena a string usando Bubble Sort
+    bubbleSort(input, n);
+    
+    // Exibe o resultado
+    printf("Letras ordenadas em ordem alfabética: %s\n", input);
+    
+    return 0;
+}
